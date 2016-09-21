@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Info App</title>
+	<meta charset="utf-8" /> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script>
+    <link href="home.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="infoDiv">
+        <ul id="info"></ul>
+        <template id="infoTemplate">            
+                <li>Name: {{Name}}</li>
+                <li>Age: {{Age}}</li>
+                <li>Contact Number: {{ContactNumber}}</li>
+                <li>Hobby: {{Hobby}}</li>
+                <br />
+        </template>
+    </div>
+    <script src="Scripts/home.js"></script>
+</body>
+</html>

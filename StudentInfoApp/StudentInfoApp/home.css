@@ -1,0 +1,26 @@
+﻿
+body {
+    margin-top: 20px;
+}
+
+#head li {
+    margin-left: 20px;
+    display: inline;
+}
+
+#info li {
+    list-style-type: none; 
+}
+
+
+#infoDiv ul .edit {
+  display: none;
+}
+
+#infoDiv ul.edit .edit {
+  display: initial;
+}
+
+#infoDiv ul.edit .noedit {
+  display: none;
+}
