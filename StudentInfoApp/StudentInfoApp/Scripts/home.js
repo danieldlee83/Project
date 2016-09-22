@@ -29,21 +29,6 @@
         });
     }
 
-    function formatItem(contact) {
-        return contact.Name + contact.Age;
-    }
-
-    //$btn.click(function () {
-    //    var Id = $('#contactValue').val();
-    //    $.getJSON(uri + '/' + Id)
-    //        .done(function (data) {
-    //            $contactList.text(formatItem(data));
-    //        })
-    //        .fail(function (jqXHR, textStatus, err) {
-    //            $contactList.text('Error: ' + err);
-    //        });
-    //});
-    
     function displayContactsByName(contacts) {
         $list.append(Mustache.render(listTemplate, contacts));
     }
@@ -62,15 +47,5 @@
             }
        });
     });
-
-
-
-
-
-
-
-
-
-
 
 });
