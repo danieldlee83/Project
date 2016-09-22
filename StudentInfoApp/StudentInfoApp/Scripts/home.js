@@ -5,8 +5,9 @@
     var $contactList = $('#contactList');
     var infoTemplate = $('#infoTemplate').html();
     var listTemplate = $('#listTemplate').html();
-    var $btn = $('#btn');
+    var $searchBtn = $('#searchBtn');
     var $list = $('#list');
+    var $contactValue = $('#contactValue');
 
     $(document).ready(function () { getContacts(); });
 
@@ -33,19 +34,29 @@
         $list.append(Mustache.render(listTemplate, contacts));
     }
 
-    $btn.click(function(){
-        var name = $('#contactValue').val();
+    $searchBtn.click(function () {
+        var name = $contactValue.val();
 
         $.ajax({
             type: 'GET',
             url: uri + '/' + name,
             success: function (name) {
                 displayContactsByName(name);
+                $contactValue.val("");
             },
             error: function () {
-                alert("Failure to get templates.");
+                alert("Failure to get contacts.");
             }
        });
+    });
+
+    $(document).ready(function () {
+
+        $contactValue.keyup(function (event) {
+            if (event.keyCode == 13) {
+                $searchBtn.click();
+            }
+        });
     });
 
 });

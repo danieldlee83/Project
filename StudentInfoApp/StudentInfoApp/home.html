@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Student Contact Info</title>
+    <title>Contact Info</title>
 	<meta charset="utf-8" /> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
@@ -12,11 +12,13 @@
     <link href="home.css" rel="stylesheet" />
 </head>
 <body>
+    <h1>List of Contact</h1>
     <div id="infoDiv" class="responsive">
         <table class="table table-bordered table-hover">
             <thead class="tHead">
                 <tr>
                     <th>Name</th>
+                    <th>Address</th>
                     <th>Age</th>
                     <th>Contact Number</th>
                     <th>Hobby</th>
@@ -25,19 +27,20 @@
             <tbody  id="info"></tbody>
             <template id="infoTemplate">
                 <tr>
-                    <td class="success">{{Name}}</td>
-                    <td class="danger">{{Age}}</td>
-                    <td class="info">{{ContactNumber}}</td>
-                    <td class="warning">{{Hobby}}</td>
+                    <td class="active col-md-1">{{Name}}</td>
+                    <td class="active col-md-1">{{Address}}</td>
+                    <td class="active col-md-1">{{Age}}</td>
+                    <td class="active col-md-1">{{ContactNumber}}</td>
+                    <td class="active col-md-1">{{Hobby}}</td>
                 </tr>
             </template>       
         </table>
     </div>
     <div>
         <div>
-            <h2>Search by Name:</h2>
-            <input type="text" id="contactValue" />
-            <button class="btn btn-danger" value="Search" id="btn">Search</button>
+            <h1>Search by Name</h1>
+            <input type="text" id="contactValue" value="" style="width: 200px; height: 35px;" autofocus />
+            <button class="btn btn-danger" value="Search" id="searchBtn">Search</button>
         </div>
             <div id="infoDiv" class="responsive">
                 <table class="table table-bordered table-hover" id="list"></table>                                   
@@ -45,6 +48,7 @@
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Address</th>
                             <th>Age</th>
                             <th>Contact Number</th>
                             <th>Hobby</th>
@@ -52,10 +56,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="active col-md-3">{{Name}}</td>
-                            <td class="active col-md-3">{{Age}}</td>
-                            <td class="active col-md-3">{{ContactNumber}}</td>
-                            <td class="active col-md-3">{{Hobby}}</td>
+                            <td class="active col-md-1">{{Name}}</td>
+                            <td class="active col-md-1">{{Address}}</td>
+                            <td class="active col-md-1">{{Age}}</td>
+                            <td class="active col-md-1">{{ContactNumber}}</td>
+                            <td class="active col-md-1">{{Hobby}}</td>
                         </tr>
                     </tbody>
                  </template>
