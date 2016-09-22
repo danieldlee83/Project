@@ -27,11 +27,11 @@ namespace StudentInfoApp.Controllers
             return contacts;
         }
 
-        [Route("api/contacts/id")]
+        [Route("api/contacts/{name}")]
         [HttpGet]
-        public IHttpActionResult GetConstctByName(int id)
+        public IHttpActionResult GetContactByName(string name)
         {
-            var contact = contacts.FirstOrDefault((c) => c.Id == id);
+            var contact = contacts.FirstOrDefault((c) => c.Name == name);
             if (contact == null)
             {
                 return NotFound();
