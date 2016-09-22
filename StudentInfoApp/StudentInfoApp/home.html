@@ -12,15 +12,40 @@
     <link href="home.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="infoDiv">
-        <ul id="info"></ul>
-        <template id="infoTemplate">            
-                <li>Name: {{Name}}</li>
-                <li>Age: {{Age}}</li>
-                <li>Contact Number: {{ContactNumber}}</li>
-                <li>Hobby: {{Hobby}}</li>
-                <br />
-        </template>
+    <div id="infoDiv" class="responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Contact Number</th>
+                    <th>Hobby</th>
+                </tr>
+            </thead>
+            <tbody  id="info"></tbody>
+            <template id="infoTemplate">
+                <tr>
+                    <td class="active col-md-3">{{Name}}</td>
+                    <td class="active col-md-3">{{Age}}</td>
+                    <td class="active col-md-3">{{ContactNumber}}</td>
+                    <td class="active col-md-3">{{Hobby}}</td>
+                </tr>
+            </template>       
+        </table>
+    </div>
+    <div>
+        <h2>Search by Name:</h2>
+        <div>
+            <input type="text" id="id" />
+            <button class="btn btn-danger" onclick="searchById();">Search</button>
+            <ul id="contactList"></ul>
+            <template id="listTemplate">
+               <li>{{Name}}</li>
+               <li>{{Age}}</li>
+               <li>{{ContactNumber}}</li>
+               <li>{{Hobby}}</li>
+            </template>
+        </div>                          
     </div>
     <script src="Scripts/home.js"></script>
 </body>

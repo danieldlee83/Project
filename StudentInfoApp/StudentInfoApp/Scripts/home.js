@@ -2,8 +2,9 @@
 
     var uri = 'api/contacts';
     var $info = $('#info');
+    var $contactList = $('#contactList');
     var infoTemplate = $('#infoTemplate').html();
-
+    var listTemplate = $('#listTemplate').html();
 
     $(document).ready(function () { getContacts(); });
 
@@ -11,12 +12,15 @@
         $info.append(Mustache.render(infoTemplate, contacts));
     }
 
+    function dispayContactsByName(contacts) {
+        $contactList.append(Mustache.render(listTemplate.contacts))
+    }
+
     function getContacts() {
         $.ajax({
             type: 'GET',
             url: uri,
             success: function (contacts) {
-                $info.empty();
                 $.each(contacts, function (i, contact) {
                     displayContacts(contact);
                 });
@@ -27,16 +31,20 @@
         });
     }
 
-    //function find() {
-    //    var id = $('#prodId').val();
-    //    $.getJSON(uri + '/' + id)
-    //        .done(function (data) {
-    //            $('#product').text(formatItem(data));
-    //        })
-    //        .fail(function (jqXHR, textStatus, err) {
-    //            $('#product').text('Error: ' + err);
-    //        });
-    //}
+    function searchById() {
+        var id = $('#id').val();
+        $.ajax({
+            type: 'GET',
+            url: uri + "/" + id,
+            success: function (data) {
+                dispayContactsByName(data)
+            },
+             error: function () {
+                 alert("Failure to get contacts.");
+            }
+        });
+     }
+    
 
 
 
