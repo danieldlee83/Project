@@ -1,5 +1,7 @@
-﻿using System;
+﻿using StudentInfoApp.Controllers;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -12,6 +14,6 @@ namespace StudentInfoApp.Models
         public string Address { get; set; }
         public int Age { get; set; }
         public string ContactNumber { get; set; }
-        public string Hobby { get; set; }
+        public string Hobby { get; set; }     
     }
 }

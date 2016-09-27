@@ -2,3 +2,16 @@
 body {
     margin: 20px 20px 0px 20px;     
 }
+
+
+#table tbody tr .edit {
+  display: none;
+}
+
+#table tbody tr.edit .edit {
+  display: initial;
+}
+
+#table tbody tr.edit .noedit {
+  display: none;
+}

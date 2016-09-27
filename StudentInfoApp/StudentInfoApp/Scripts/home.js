@@ -59,4 +59,31 @@
         });
     });
 
+    $info.delegate('.editContact', 'click', function () {
+        var $tr = $(this).closest('tr');
+        $tr.find('input.address').val($tr.find('span.address').html());
+        $tr.find('input.contactNum').val($tr.find('span.contactNum').html());
+        $tr.addClass('edit');
+    });
+
+    $info.delegate('.cancelEdit', 'click', function () {
+        $(this).closest('tr').removeClass('edit');
+    });
+
+    $info.delegate('.remove', 'click', function () {
+        var $tr = $(this).closest('tr');
+            $.ajax({
+                type: 'DELETE',
+                url: uri+ "/" + $tr.attr('data-id'),
+                success: function () {
+                    $tr.fadeOut(100, function () {
+                        getContacts();
+                    });
+                },
+                error: function () {
+                    alert('error deleting contact.');
+                }
+            });
+    });
+
 });
