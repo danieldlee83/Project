@@ -12,7 +12,6 @@ namespace StudentInfoApp.Controllers
 {
     public class ContactsController : ApiController
     {
-
         Contact[] contacts = new Contact[]
         {
             new Contact { Id = 1, Name = "Daniel Lee", Address = "12 Main St. SLC, UT", Age = 21, ContactNumber = "111-222-3333", Hobby = "Fishing" },
@@ -33,18 +32,6 @@ namespace StudentInfoApp.Controllers
         [Route("api/contacts/{name}")]
         [HttpGet]
         public IHttpActionResult GetContactByName(string name)
-        {
-            var contact = contacts.FirstOrDefault((c) => c.Name == name);
-            if (contact == null)
-            {
-                return NotFound();
-            }
-            return Ok(contact);
-        }
-
-        [Route("api/contacts/{name}")]
-        [HttpDelete]
-        public IHttpActionResult Delete(string name)
         {
             var contact = contacts.FirstOrDefault((c) => c.Name == name);
             if (contact == null)
